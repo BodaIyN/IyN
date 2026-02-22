@@ -53,13 +53,19 @@ p{margin:5px;}
     background-size: cover;
 
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;   /* 👈 CENTRADO REAL */
-
+    align-items: center;      /* centrado vertical del bloque */
+    justify-content: center;  /* centrado horizontal */
     text-align: center;
     z-index: 9999;
     transition: opacity 1s;
+}
+
+/* CONTENEDOR INTERNO: texto + botón */
+.contenido-inicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px; /* 🔹 baja TODO el contenido (texto + botón) */
 }
 
 #pantalla-inicial p {
@@ -67,7 +73,7 @@ p{margin:5px;}
     font-weight: 600;
     letter-spacing: 2px;
     font-size: 1.2em;
-    margin-bottom: 40px; /* separa el texto del botón */
+    margin-bottom: 20px; /* separa texto del botón */
 }
 
 /* Botón abrir invitación */
@@ -84,13 +90,28 @@ p{margin:5px;}
     transition: 0.3s;
     animation: vibrar 1s infinite;
 
-    /* Padding y tamaño */
     padding: 25px 40px;
     font-size: 1.2em;
-
-    /* NUEVO: posición más abajo */
-    margin-top: 30vh; /* ajusta hasta que quede visualmente perfecto */
 }
+
+.boton-inicial:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* RESPONSIVE: móvil */
+@media(max-width:480px){
+    .contenido-inicial {
+        margin-top: 30px; /* bajar contenido en móvil */
+    }
+    #pantalla-inicial p {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+    .boton-inicial {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
 
 .boton-inicial:hover {
     background: #fff;
@@ -379,10 +400,11 @@ h2{
 
 <body>
 
-<!-- PANTALLA INICIAL -->
 <div id="pantalla-inicial">
-    <p>¡EL DÍA SE ACERCA!</p>
-    <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
+    <div class="contenido-inicial">
+        <p>¡EL DÍA SE ACERCA!</p>
+        <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
+    </div>
 </div>
 
 <!-- INVITACIÓN -->
@@ -587,4 +609,5 @@ function copiarIBAN() {
 
       
 
-                             
+
+                
