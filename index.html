@@ -391,7 +391,7 @@ h2{
 <!-- PANTALLA INICIAL -->
 <div id="pantalla-inicial">
     <p>¡EL DÍA SE ACERCA!</p>
-    <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
+ <a href="#" class="boton-inicial" id="btnAbrir">ABRIR INVITACIÓN</a>
 </div>
 
 <!-- INVITACIÓN -->
@@ -404,7 +404,7 @@ h2{
         <div class="caja"><strong id="m">0</strong>MINUTOS</div>
         <div class="caja"><strong id="s">0</strong>SEGUNDOS</div>
     </div>
-<img id="foto-invitacion" src="https://inakiynerea.github.io/boda/foto1.jpg" alt="Foto invitación" loading="lazy">
+<img id="foto-invitacion" src="https://github.com/BodaIyN/IyN/blob/main/foto1.jpg" alt="Foto invitación" loading="lazy">
 </section>
 
 <!-- SECCIONES: PROGRAMA, CONFIRMA, UBICACIÓN, PLANES, CONTACTO, REGALO -->
@@ -536,18 +536,35 @@ h2{
 
 <script defer>
 // ABRIR INVITACIÓN
-function abrirInvitacion(e){
-  e.preventDefault();
-  const pantalla=document.getElementById("pantalla-inicial");
-  pantalla.style.opacity="0";
-  setTimeout(()=>{
-    pantalla.style.display="none";
-    const sections=document.querySelectorAll("section");
-    sections.forEach((sec,i)=>setTimeout(()=>sec.classList.add("visible"), i*300));
-    mostrarFlecha();
-  },1000);
-}
+document.addEventListener("DOMContentLoaded", function(){
 
+  const boton = document.getElementById("btnAbrir");
+  const pantalla = document.getElementById("pantalla-inicial");
+  const flecha = document.getElementById("flecha");
+
+  boton.addEventListener("click", function(e){
+    e.preventDefault();
+
+    pantalla.style.opacity = "0";
+
+    setTimeout(() => {
+      pantalla.style.display = "none";
+
+      const sections = document.querySelectorAll("section");
+      sections.forEach((sec, i) => {
+        setTimeout(() => sec.classList.add("visible"), i * 300);
+      });
+
+      mostrarFlecha();
+    }, 1000);
+  });
+
+  function mostrarFlecha(){ 
+    flecha.style.display = "flex"; 
+    setTimeout(()=>{flecha.style.opacity="1";},50);
+  }
+
+});
 // FLECHA
 function mostrarFlecha(){ 
     const f=document.getElementById("flecha"); 
