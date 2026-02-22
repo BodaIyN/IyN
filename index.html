@@ -55,22 +55,23 @@ p{margin:5px;}
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;   /* 👈 CENTRADO REAL */
+    justify-content: center;
 
     text-align: center;
     z-index: 9999;
     transition: opacity 1s;
 }
 
+/* MENSAJE SUPERIOR */
 #pantalla-inicial p {
     color: #fff;
     font-weight: 600;
     letter-spacing: 2px;
     font-size: 1.2em;
-    margin-bottom: 20px; /* separa el texto del botón */
+    margin-bottom: 20px; /* espacio entre el texto y el botón */
 }
 
-/* Botón abrir invitación */
+/* BOTÓN ABRIR INVITACIÓN */
 .boton-inicial {
     border-radius: 30px;
     border: 1px solid #fff;
@@ -84,16 +85,29 @@ p{margin:5px;}
     transition: 0.3s;
     animation: vibrar 1s infinite;
 
-    /* Padding y tamaño */
     padding: 25px 40px;
     font-size: 1.2em;
 
-    margin-top: 30px;  /* baja un poco solo el botón */
+    margin-top: 25px; /* baja solo un poco el botón */
 }
 
 .boton-inicial:hover {
     background: #fff;
     color: #000;
+}
+
+/* RESPONSIVE: MÓVIL */
+@media(max-width:480px){
+    #pantalla-inicial p {
+        font-size: 1em;
+        margin-bottom: 15px; /* un poco menos de espacio en móvil */
+    }
+
+    .boton-inicial {
+        padding: 12px 20px;
+        font-size: 1em;
+        margin-top: 15px; /* baja ligeramente el botón en móvil */
+    }
 }
 
 /* Responsive para móviles */
