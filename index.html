@@ -51,18 +51,15 @@ p{margin:5px;}
     inset: 0;
     background: url("https://bodaiyn.github.io/IyN/ronda-portada.jpg") no-repeat center center;
     background-size: cover;
-    display: flex;
-    align-items: center;       /* centrado vertical del contenedor */
-    justify-content: center;   /* centrado horizontal */
-    text-align: center;
-    z-index: 9999;
-}
 
-.contenido-inicial {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px; /* 🔹 baja TODO el contenido dentro del bloque */
+    justify-content: center;   /* 👈 CENTRADO REAL */
+
+    text-align: center;
+    z-index: 9999;
+    transition: opacity 1s;
 }
 
 #pantalla-inicial p {
@@ -70,7 +67,7 @@ p{margin:5px;}
     font-weight: 600;
     letter-spacing: 2px;
     font-size: 1.2em;
-    margin-bottom: 20px; /* separa el texto del botón */
+    margin-bottom: 40px; /* separa el texto del botón */
 }
 
 /* Botón abrir invitación */
@@ -92,7 +89,8 @@ p{margin:5px;}
     font-size: 1.2em;
 
     /* NUEVO: posición más abajo */
-    margin-top: 20px;  /* baja un poco solo el botón */
+    margin-top: 30vh; /* ajusta hasta que quede visualmente perfecto */
+}
 
 .boton-inicial:hover {
     background: #fff;
@@ -383,10 +381,9 @@ h2{
 
 <!-- PANTALLA INICIAL -->
 <div id="pantalla-inicial">
-    <div class="contenido-inicial">
-        <p>¡EL DÍA SE ACERCA!</p>
-        <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
-    </div>
+    <p>¡EL DÍA SE ACERCA!</p>
+    <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
+</div>
 
 <!-- INVITACIÓN -->
 <section id="invitation">
@@ -590,4 +587,4 @@ function copiarIBAN() {
 
       
 
-    
+                             
