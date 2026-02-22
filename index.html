@@ -51,27 +51,29 @@ p{margin:5px;}
     inset: 0;
     background: url("https://bodaiyn.github.io/IyN/ronda-portada.jpg") no-repeat center center;
     background-size: cover;
+    display: flex;
+    align-items: center;       /* centrado vertical del contenedor */
+    justify-content: center;   /* centrado horizontal */
+    text-align: center;
+    z-index: 9999;
+}
 
+.contenido-inicial {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
-    text-align: center;
-    z-index: 9999;
-    transition: opacity 1s;
+    margin-top: 50px; /* 🔹 baja TODO el contenido dentro del bloque */
 }
 
-/* MENSAJE SUPERIOR */
 #pantalla-inicial p {
     color: #fff;
     font-weight: 600;
     letter-spacing: 2px;
     font-size: 1.2em;
-    margin-bottom: 20px; /* espacio entre el texto y el botón */
+    margin-bottom: 20px; /* separa el texto del botón */
 }
 
-/* BOTÓN ABRIR INVITACIÓN */
+/* Botón abrir invitación */
 .boton-inicial {
     border-radius: 30px;
     border: 1px solid #fff;
@@ -85,29 +87,16 @@ p{margin:5px;}
     transition: 0.3s;
     animation: vibrar 1s infinite;
 
+    /* Padding y tamaño */
     padding: 25px 40px;
     font-size: 1.2em;
 
-    margin-top: 25px; /* baja solo un poco el botón */
-}
+    /* NUEVO: posición más abajo */
+    margin-top: 20px;  /* baja un poco solo el botón */
 
 .boton-inicial:hover {
     background: #fff;
     color: #000;
-}
-
-/* RESPONSIVE: MÓVIL */
-@media(max-width:480px){
-    #pantalla-inicial p {
-        font-size: 1em;
-        margin-bottom: 15px; /* un poco menos de espacio en móvil */
-    }
-
-    .boton-inicial {
-        padding: 12px 20px;
-        font-size: 1em;
-        margin-top: 15px; /* baja ligeramente el botón en móvil */
-    }
 }
 
 /* Responsive para móviles */
@@ -394,9 +383,10 @@ h2{
 
 <!-- PANTALLA INICIAL -->
 <div id="pantalla-inicial">
-    <p>¡EL DÍA SE ACERCA!</p>
-    <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
-</div>
+    <div class="contenido-inicial">
+        <p>¡EL DÍA SE ACERCA!</p>
+        <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
+    </div>
 
 <!-- INVITACIÓN -->
 <section id="invitation">
@@ -600,4 +590,4 @@ function copiarIBAN() {
 
       
 
-                              
+    
