@@ -66,18 +66,6 @@ p{margin:5px;}
 }
 .boton-inicial:hover{background:#fff;color:#000;}
 
-.fila-regalo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-.fila-regalo .boton-copiar {
-    max-width: 180px;
-}
-
 /* ============================= */
 /* BOTONES GENERALES OPTIMIZADOS */
 /* ============================= */
@@ -351,34 +339,34 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
 </section>
 
 <!-- REGALO -->
-<!-- REGALO -->
 <section class="regalo">
     <h2>REGALO</h2>
     <p class="texto-regalo">
         Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros,
         podéis ayudarnos a comenzar esta nueva etapa.
     </p>
-
     <div class="caja-regalo">
         <!-- IBAN -->
-        <div class="fila-regalo">
-            <p class="titulo-iban">IBAN</p>
-            <p class="iban" id="ibanTexto">ES33 1583 0001 1891 8952 4373</p>
-            <button class="boton-copiar" onclick="copiarIban()">Copiar IBAN</button>
-        </div>
+        <p class="titulo-iban">IBAN</p>
+        <p class="iban" id="ibanTexto">ES33 1583 0001 1891 8952 4373</p>
 
-        <!-- Beneficiario -->
-        <div class="fila-regalo" style="margin-top:20px;">
-            <p class="titulo-iban">BENEFICIARIO</p>
-            <p id="beneficiarioTexto" style="font-size:0.87em; letter-spacing:2px; margin:5px 0;">
+        <!-- BENEFICIARIO -->
+        <div class="fila-regalo">
+            <p class="titulo-iban" style="margin-top:20px;">BENEFICIARIO</p>
+            <p id="beneficiarioTexto" style="font-size:0.75em; letter-spacing:2px; margin:5px 0;">
                 N Aizpuru Ortega I Salaberria Garcia
             </p>
+        </div>
+
+        <!-- BOTONES ALINEADOS -->
+        <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:15px;">
+            <button class="boton-copiar" onclick="copiarIban()">Copiar Iban</button>
             <button class="boton-copiar" onclick="copiarBeneficiario()">Copiar Beneficiario</button>
         </div>
 
+        <!-- Mensaje de copia -->
         <p class="gracias" id="mensajeCopiado"></p>
     </div>
-
     <footer>Con mucho cariño, os esperamos</footer>
 </section>
 
